@@ -3,7 +3,7 @@ promptinit
 
 prompt walters
 
-PS1='%u%{$reset_color%}$(git_branch_prompt)%{$fg[blue]%}%%> %{$reset_color%} '
+PS1='%u%{$reset_color%}$(git_branch_prompt)%{$fg[blue]%}%%>%{$reset_color%} '
 
 setopt promptsubst
 
@@ -25,7 +25,8 @@ stty icrnl
 HISTSIZE=3000
 SAVEHIST=3000
 HISTFILE=~/.zsh_history
-
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 # exports
 
@@ -55,6 +56,9 @@ export CPPFLAGS="${CPPFLAGS} -I$(brew --prefix openssl)/include"
 export LDFLAGS="${LDFLAGS} -L$(brew --prefix openssl)/lib"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
-# pyenv
+# pyenv and pyenv-virtualenvwrapper
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export WORKON_HOME=$HOME/.virtualenvs
+pyenv virtualenvwrapper_lazy
+
