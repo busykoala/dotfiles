@@ -1,10 +1,11 @@
 # git
-alias gl="git log --graph"
+alias gl="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias gd="git diff --color"
 alias gdf="git diff --color --cached"
 alias gdr="git diff --raw --color --cached"
 alias gp="git pull --rebase"
 alias gco="git checkout"
+alias gs="git status"
 
 # Normal aliases
 alias la='ls -lsah'
