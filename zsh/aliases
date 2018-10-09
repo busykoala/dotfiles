@@ -1,0 +1,11 @@
+# git
+alias gl="git log --graph"
+alias gd="git diff --color"
+alias gdf="git diff --color --cached"
+alias gdr="git diff --raw --color --cached"
+alias gp="git pull --rebase"
+alias gco="git checkout"
+
+# Normal aliases
+alias la='ls -lsah'
+alias grep='grep --color'

@@ -1,0 +1,67 @@
+if [[ -d ./.svn ]] {
+  notclean=''
+  if [[ `svn st | grep '^[ACDIMR?!~]' | wc -l` -gt 0 ]]; then
+    notclean='%{\033[1;31m%}*'
+  fi
+
+  echo "[%{\033[0;36m%}SVN$notclean%{\033[00m%}]"
+
+} else {
+
+  prefix=''
+  branchinfo=`git branch -vv 2> /dev/null|grep '^*'`
+  branch=`echo "$branchinfo" | sed -e 's/* \([^ ]*\).*$/\1/'`
+  if [[ `echo "$branch"|wc -c` -gt "1" ]] {
+    files=`git ls-files -t -m -o --exclude-standard -d 2> /dev/null`
+
+    gitsvn=false
+    if [[ `git config --get svn-remote.svn.url | wc -l` -gt 0 ]]; then
+        gitsvn=true
+        prefix="$prefix%{\033[0;36m%}gitsvn-"
+    fi
+
+
+    changed=''
+    removed=''
+    new=''
+    not_pulled=''
+    not_pushed=''
+    not_committed=''
+
+    if [[ `echo $files | grep '^[CM]' | wc -l` -gt 0 ]]; then
+        changed='%{\033[1;31m%}*'
+    fi
+
+    if [[ `echo $files | grep '^[RK]' | wc -l` -gt 0 ]]; then
+        removed='%{\033[1;31m%}!'
+    fi
+
+    if [[ `echo $files | grep '^?' | wc -l` -gt 0 ]]; then
+        new='%{\033[1;34m%}?'
+    fi
+
+    if $gitsvn ; then
+        if [[ `git branch -r --contains HEAD | wc -l` -eq 0 ]]; then
+            not_pushed='%{\033[1;35m%}^'
+        fi
+
+    else
+        tracking=`echo "$branchinfo"|sed -e 's/^.*\[\(.*\)\].*$/\1/'`
+
+        if [[ `echo "$tracking" | grep behind | wc -l` -gt 0 ]]; then
+            not_pulled='%{\033[1;36m%}v'
+        fi
+
+        if [[ `echo "$tracking" | grep ahead | wc -l` -gt 0 ]]; then
+            not_pushed='%{\033[1;35m%}^'
+        fi
+    fi
+
+    if [[ `git diff-index HEAD | grep -v 00000000000000000000000000000000000 | wc -l` -gt 0 ]]; then
+        not_committed='%{\033[0;31m%}$'
+    fi
+
+    echo "[$prefix%{\033[0;32m%}$branch$changed$removed$new$not_pushed$not_pulled$not_committed%{\033[00m%}]"
+  }
+}
+
