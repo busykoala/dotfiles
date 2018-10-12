@@ -25,7 +25,7 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'jnurmine/Zenburn'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
-
+Plugin 'Valloric/YouCompleteMe'
 
 " ################
 " All of your Plugins must be added before this line
@@ -60,10 +60,15 @@ au BufNewFile,BufRead *.js, *.html, *.css, *.vue:
     \ set shiftwidth=2
 
 
+" Flagging unnecessary whitespace
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" You Complete Me options
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "python with virtualenv support
+"might not work with pyenv...?
 py << EOF
 import os
 import sys
@@ -79,3 +84,9 @@ syntax on
 colorscheme zenburn
 
 set nu
+
+" access system clipboard on mac
+set clipboard=unnamed
+
+" workarround for You Complete Me
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
