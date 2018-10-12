@@ -60,8 +60,10 @@ au BufNewFile,BufRead *.js, *.html, *.css, *.vue:
     \ set shiftwidth=2
 
 
-" Flagging unnecessary whitespace
+" Flagging Unnecessary Whitespace
+highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
 
 " You Complete Me options
 let g:ycm_autoclose_preview_window_after_completion=1
