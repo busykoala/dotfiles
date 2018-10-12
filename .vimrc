@@ -75,9 +75,10 @@ let python_highlight_all=1
 syntax on
 
 colorscheme zenburn
-
 set nu
 
 " access system clipboard on mac
 set clipboard=unnamed
 
+" nerdtree options
+map <C-n> :NERDTreeToggle<CR>
