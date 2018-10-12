@@ -65,3 +65,10 @@ hash pyenv 2>/dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-ini
 workon(){source $(pyenv root)/versions/"$1"/bin/activate}
 compctl -/ -W $(pyenv root)/versions/ workon
 
+# search omelette by filename
+omelettefind(){find -L /Users/busykoala/.buildout/eggs/ -name "*$1*"}
+
+# nvm with brew installed
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
+
