@@ -66,17 +66,8 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " You Complete Me options
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-"python with virtualenv support
-"might not work with pyenv...?
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py'    )
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+" workarround for You Complete Me
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
 let python_highlight_all=1
 syntax on
@@ -88,5 +79,3 @@ set nu
 " access system clipboard on mac
 set clipboard=unnamed
 
-" workarround for You Complete Me
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
