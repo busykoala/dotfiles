@@ -5,7 +5,7 @@ alias gdf="git diff --color --cached"
 alias gp="git pull --rebase"
 alias gco="git checkout"
 alias gs="git status"
-alias gcm="git commit -m"
+alias gcm="git commit -S -m"
 
 # Normal aliases
 alias la='ls -lsah'
