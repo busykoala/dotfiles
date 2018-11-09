@@ -64,3 +64,11 @@ omelettefind(){find -L /Users/busykoala/.buildout/eggs/ -name "*$1*"}
 export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
 
+# Setting PATH for Python 3.7
+# The original version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+export PATH
+
+
+# Add Ruby path
+export PATH=$PATH:/usr/local/lib/ruby/gems/2.5.0/bin
