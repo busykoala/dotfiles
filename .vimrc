@@ -82,3 +82,6 @@ set clipboard=unnamed
 
 " nerdtree options
 map <C-n> :NERDTreeToggle<CR>
+
+" backspace enable
+set backspace=indent,eol,start
