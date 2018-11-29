@@ -31,6 +31,9 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
+# bind delete key to delete key :)
+bindkey "\e[3~" delete-char
+
 # exports
 export PATH=/usr/local/bin:/Developer/usr/bin:/Users/busykoala/bin:/opt/local/bin:/opt/local/sbin:$PATH
 export LC_CTYPE=en_US.UTF-8
@@ -68,7 +71,6 @@ export NVM_DIR="$HOME/.nvm"
 # The original version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
-
 
 # Add Ruby path
 export PATH=$PATH:/usr/local/lib/ruby/gems/2.5.0/bin
