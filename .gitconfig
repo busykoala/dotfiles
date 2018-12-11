@@ -5,6 +5,7 @@
     signingkey = AE14B2E4
 [commit]
     gpgsign = true
+    template = /Users/busykoala/.stCommitMsg
 [core]
     editor = vim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -17,3 +18,9 @@
     enabled = 0
 [diff]
     tool = vimdiff
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
+[mergetool "sourcetree"]
+    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
