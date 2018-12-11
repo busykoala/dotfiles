@@ -18,6 +18,18 @@ ln -s ~/dotfiles/python/.pythonrc ~/.pythonrc
 ln -s ~/dotfiles/python/.pdbrc ~/.pdbrc
 ```
 
+Add computer specific config
+
+```zsh
+mkdir ~/dotfiles/user_specific
+touch ~/dotfiles/user_specific/.gitconfig_expand
+```
+```zsh
+[user]
+    signingkey = XXXXXXXXXXXX
+```
+
+
 ## Configure Vim
 
 ```zsh
