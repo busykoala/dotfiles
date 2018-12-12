@@ -16,6 +16,7 @@ ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.gitignore ~/.gitignore
 ln -s ~/dotfiles/python/.pythonrc ~/.pythonrc
 ln -s ~/dotfiles/python/.pdbrc ~/.pdbrc
+ln -s ~/dotfiles/.ideavimrc ~/.ideavimrc
 ```
 
 Add computer specific config
