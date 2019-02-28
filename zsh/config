@@ -73,8 +73,12 @@ PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
 
 # Add Ruby path
-export PATH=$PATH:/usr/local/lib/ruby/gems/2.5.0/bin
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Add python and pdb config
 export PYTHONSTARTUP=$HOME/.pythonrc
 
+# Java
+export JUNIT_HOME="$HOME/bin/java"
+export PATH="$PATH:$JUNIT_HOME"
+export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.13-beta-2.jar:$JUNIT_HOME/hamcrest-core-2.1.jar"

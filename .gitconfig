@@ -6,7 +6,6 @@
     path = ~/dotfiles/user_specific/.gitconfig_expand
 [commit]
     gpgsign = true
-    template = /Users/busykoala/.stCommitMsg
 [core]
     editor = vim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -17,12 +16,4 @@
     pretty = %C(blue)%h%Creset %s %C(green)%d%Creset [%C(red)%an%Creset, %C(cyan)%cr%Creset] %C(bold reverse)%N%Creset
 [rerere]
     enabled = 0
-[diff]
-    tool = vimdiff
-[difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path = 
-[mergetool "sourcetree"]
-    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
 

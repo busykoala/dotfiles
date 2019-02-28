@@ -79,9 +79,12 @@ set nu
 
 " access system clipboard on mac
 set clipboard=unnamed
+" put yank to clipboard
+set clipboard=unnamedplus
 
 " nerdtree options
 map <C-n> :NERDTreeToggle<CR>
 
 " backspace enable
 set backspace=indent,eol,start
+
