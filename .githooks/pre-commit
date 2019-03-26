@@ -1,0 +1,26 @@
+#!/bin/bash
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+    against=HEAD
+else
+    # Initial commit: diff against an empty tree object
+    against=4b825dc642cb6eb9a060e54bf8d69288fbee4904
+fi
+
+# Redirect output to stderr.
+exec 1>&2
+
+# Check if there is a pdb staged
+if test $(git diff $against --no-ext-diff --unified=0 --exit-code -a --no-prefix --cached |
+           egrep "^\+" |
+           grep "pdb.set_trace()" |
+           wc -l) != 0
+then
+    echo "Do you REALLY want to commit a pdb? [yN]"
+    read yn < /dev/tty
+    case $yn in
+        [Yy]* ) ;;
+        [Nn]* ) exit 1;;
+        * ) exit 1;;
+    esac
+fi
