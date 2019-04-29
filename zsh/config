@@ -81,3 +81,5 @@ export PYTHONSTARTUP=$HOME/.pythonrc
 export JUNIT_HOME="$HOME/bin/java"
 export PATH="$PATH:$JUNIT_HOME"
 export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.13-beta-2.jar:$JUNIT_HOME/hamcrest-core-2.1.jar"
+
+fortune | cowsay
