@@ -24,12 +24,15 @@ else
 fi
 
 # YCM Configuration information
+echo ""
+echo "#######################################################"
 echo "Please see https://github.com/Valloric/YouCompleteMe"
 echo "and configure accordingly."
 echo ""
 echo "Also install astyle and for R the package lintr"
 echo ""
 echo "See https://github.com/busykoala/vim_config for more info"
+echo "######################################################"
 
 # Symlink dotfiles
 ln -sf ~/dotfiles/.default_eslintrc ~/.eslintrc
