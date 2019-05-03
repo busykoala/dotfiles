@@ -32,10 +32,12 @@ echo ""
 echo "See https://github.com/busykoala/vim_config for more info"
 
 # Symlink dotfiles
-ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.default_eslintrc ~/.eslintrc
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/.gitignore ~/.gitignore
-ln -sf ~/dotfiles/python/.pythonrc ~/.pythonrc
-ln -sf ~/dotfiles/python/.pdbrc ~/.pdbrc
 ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
+ln -sf ~/dotfiles/.isort.cfg ~/.isort.cfg
+ln -sf ~/dotfiles/python/.pdbrc ~/.pdbrc
+ln -sf ~/dotfiles/python/.pythonrc ~/.pythonrc
+ln -sf ~/dotfiles/.zshrc ~/.zshrc
 
