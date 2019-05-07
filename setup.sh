@@ -12,6 +12,7 @@ fi
 
 # Symlink .vimrc
 ln -sf ~/vim_config/.vimrc ~/.vimrc
+ln -sf ~/vim_config/.editorconfig ~/.editorconfig
 
 YCM_REPO_FOLDER=~/.vim/bundle/Vundle.vim
 YCM_REPO_URL=https://github.com/gmarik/Vundle.vim.git
@@ -43,4 +44,3 @@ ln -sf ~/dotfiles/.isort.cfg ~/.isort.cfg
 ln -sf ~/dotfiles/python/.pdbrc ~/.pdbrc
 ln -sf ~/dotfiles/python/.pythonrc ~/.pythonrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.editorconfig ~/.editorconfig
