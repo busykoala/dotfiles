@@ -43,4 +43,4 @@ ln -sf ~/dotfiles/.isort.cfg ~/.isort.cfg
 ln -sf ~/dotfiles/python/.pdbrc ~/.pdbrc
 ln -sf ~/dotfiles/python/.pythonrc ~/.pythonrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
-
+ln -sf ~/dotfiles/.editorconfig ~/.editorconfig
