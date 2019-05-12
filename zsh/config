@@ -83,3 +83,14 @@ export PATH="$PATH:$JUNIT_HOME"
 export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.13-beta-2.jar:$JUNIT_HOME/hamcrest-core-2.1.jar"
 
 fortune | cowsay
+
+# Dots to "Path" from Jone
+rationalise-dot() {
+if [[ $LBUFFER != g* && $LBUFFER = *.. ]]; then
+    LBUFFER+=/..
+else
+    LBUFFER+=.
+fi
+}
+zle -N rationalise-dot
+bindkey . rationalise-dot
