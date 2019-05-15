@@ -86,11 +86,11 @@ fortune | cowsay
 
 # Dots to "Path" from Jone
 rationalise-dot() {
-if [[ $LBUFFER != g* && $LBUFFER = *.. ]]; then
-    LBUFFER+=/..
-else
-    LBUFFER+=.
-fi
+    if [[ $LBUFFER != g* && $LBUFFER = *.. ]]; then
+        LBUFFER+=/..
+    else
+        LBUFFER+=.
+    fi
 }
 zle -N rationalise-dot
 bindkey . rationalise-dot

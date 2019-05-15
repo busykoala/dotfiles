@@ -1,0 +1,6 @@
+workon plone_init
+cp ~/dotfiles/examples/.ycm_extra_conf.py ./.ycm_extra_conf.py
+ln -fs development.cfg buildout.cfg
+python bootstrap.py
+deactivate
+bin/buildout
