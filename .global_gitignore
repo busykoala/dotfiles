@@ -1,0 +1,10 @@
+.DS_Store
+/venv
+.idea
+*.dok
+.vscode
+.ycm_extra_conf.py
+busykoala_buildout.cfg
+user_specific/*
+*.swp
+

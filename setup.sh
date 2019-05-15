@@ -38,7 +38,7 @@ echo "######################################################"
 # Symlink dotfiles
 ln -sf ~/dotfiles/.default_eslintrc ~/.eslintrc
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
-ln -sf ~/dotfiles/.gitignore ~/.gitignore
+ln -sf ~/dotfiles/.global_gitignore ~/.global_gitignore
 ln -sf ~/dotfiles/.ideavimrc ~/.ideavimrc
 ln -sf ~/dotfiles/.isort.cfg ~/.isort.cfg
 ln -sf ~/dotfiles/python/.pdbrc ~/.pdbrc
