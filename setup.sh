@@ -35,6 +35,12 @@ echo ""
 echo "See https://github.com/busykoala/vim_config for more info"
 echo "######################################################"
 
+# Create .buildout (and sub-) directories
+mkdir -p ~/.buildout/download-cache
+mkdir -p ~/.buildout/eggs
+mkdir -p ~/.buildout/extends-cache
+mkdir -p ~/.buildout/var
+
 # Symlink dotfiles
 ln -sf ~/dotfiles/.default_eslintrc ~/.eslintrc
 ln -sf ~/dotfiles/.gitconfig ~/.gitconfig
@@ -44,3 +50,4 @@ ln -sf ~/dotfiles/.isort.cfg ~/.isort.cfg
 ln -sf ~/dotfiles/python/.pdbrc ~/.pdbrc
 ln -sf ~/dotfiles/python/.pythonrc ~/.pythonrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
+ln -sf ~/dotfiles/.buildout_default.cfg ~/.buildout/.default.cfg
