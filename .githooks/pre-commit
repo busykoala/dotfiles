@@ -24,3 +24,17 @@ then
         * ) exit 1;;
     esac
 fi
+
+if test $(git diff $against --no-ext-diff --unified=0 --exit-code -a --no-prefix --cached |
+           egrep "^\+" |
+           grep "__import__('pdb').set_trace()" |
+           wc -l) != 0
+then
+    echo "Do you REALLY want to commit a pdb? [yN]"
+    read yn < /dev/tty
+    case $yn in
+        [Yy]* ) ;;
+        [Nn]* ) exit 1;;
+        * ) exit 1;;
+    esac
+fi
