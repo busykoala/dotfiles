@@ -7,4 +7,4 @@
 busykoala_buildout.cfg
 user_specific/*
 *.swp
-
+pyvenv.cfg

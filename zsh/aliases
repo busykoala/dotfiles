@@ -7,5 +7,5 @@ alias gs="git status"
 alias gcm="git commit -m"
 
 # Normal aliases
-alias la='ls -lsah'
+alias la='exa -lah'
 alias grep='grep --color'
