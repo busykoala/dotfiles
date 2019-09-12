@@ -8,3 +8,5 @@ busykoala_buildout.cfg
 user_specific/*
 *.swp
 pyvenv.cfg
+**/4teamwork_ldap_plugin.xml
+pylama.ini

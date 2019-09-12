@@ -8,7 +8,7 @@ PS1='%u%{$reset_color%}$(git_branch_prompt)%{$fg[blue]%}%%>%{$reset_color%} '
 setopt promptsubst
 
 # load functions
-fpath=(~/dotfiles/zsh/functions $fpath)
+fpath=($fpath ~/dotfiles/zsh/functions $fpath)
 autoload -U ~/dotfiles/zsh/functions/*(:t)
 
 #change directory without cd
