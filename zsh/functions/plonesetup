@@ -1,6 +1,25 @@
+HIGHLIGHT="*************************"
+
+echo "${HIGHLIGHT}\nActivate venv\n${HIGHLIGHT}"
 workon plone_init
-cp ~/dotfiles/examples/.ycm_extra_conf.py ./.ycm_extra_conf.py
+
+echo "${HIGHLIGHT}\nSymlink development.cfg\n${HIGHLIGHT}"
 ln -fs development.cfg buildout.cfg
+
+echo "${HIGHLIGHT}\nBootstrap app\n${HIGHLIGHT}"
 python bootstrap.py
+
+echo "${HIGHLIGHT}\nDeactivate venv\n${HIGHLIGHT}"
 deactivate
+
+echo "${HIGHLIGHT}\nRun buildout\n${HIGHLIGHT}"
 bin/buildout
+
+if [ -d "./parts/real_omelette" ]; then
+  echo "${HIGHLIGHT}\nDelete old real_omelette\n${HIGHLIGHT}"
+  rm -rf ./parts/real_omelette
+fi
+if [ -d "./parts/omelette" ]; then
+  echo "${HIGHLIGHT}\nAdd new real_omelette\n${HIGHLIGHT}"
+  cp -RL ./parts/omelette ./parts/real_omelette
+fi
