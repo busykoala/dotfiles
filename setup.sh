@@ -14,26 +14,9 @@ fi
 ln -sf ~/vim_config/.vimrc ~/.vimrc
 ln -sf ~/vim_config/.editorconfig ~/.editorconfig
 
-YCM_REPO_FOLDER=~/.vim/bundle/Vundle.vim
-YCM_REPO_URL=https://github.com/gmarik/Vundle.vim.git
-if [ ! -d "$YCM_REPO_FOLDER" ] ; then
-	echo "The YCM repo gets cloned"
-	git clone $YCM_REPO_URL $YCM_REPO_FOLDER
-else
-	echo "The YCM repos exists, it is getting pulled"
-	git -C $YCM_REPO_FOLDER pull
-fi
-
-# YCM Configuration information
-echo ""
-echo "#######################################################"
-echo "Please see https://github.com/Valloric/YouCompleteMe"
-echo "and configure accordingly."
-echo ""
-echo "Also install astyle and for R the package lintr"
-echo ""
-echo "See https://github.com/busykoala/vim_config for more info"
-echo "######################################################"
+# Get Plug (vim plugin manager)
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Create .buildout (and sub-) directories
 mkdir -p ~/.buildout/download-cache
