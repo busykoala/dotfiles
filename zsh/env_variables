@@ -1,0 +1,39 @@
+# language and base path
+export PATH=/usr/local/bin:/Users/busykoala/bin:$PATH
+export LC_CTYPE=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# zlib
+export LDFLAGS="-L/usr/local/opt/zlib/lib $LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/zlib/include $CPPFLAGS"
+export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig $PKG_CONFIG_PATH"
+
+# sqlite
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/sqlite/lib $LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/sqlite/include $CPPFLAGS"
+export PKG_CONFIG_PATH="/usr/local/opt/sqlite/lib/pkgconfig $PKG_CONFIG_PATH"
+
+# openssl
+export LDFLAGS="-L/usr/local/opt/openssl/lib $LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/openssl/include $CPPFLAGS"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig $PKG_CONFIG_PATH"
+
+# MacOS
+export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include/sasl $CFLAGS"
+
+# Java
+export JUNIT_HOME="$HOME/bin/java"
+export PATH="$PATH:$JUNIT_HOME"
+export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.13-beta-2.jar:$JUNIT_HOME/hamcrest-core-2.1.jar"
+
+# python/pdb config
+export PYTHONSTARTUP=$HOME/.pythonrc
+
+# colored
+export CLICOLOR_FORCE=1
+export CLICOLOR=1
+export TERM=xterm-color
+
+# ftw.upgrade
+export UPGRADE_AUTHENTICATION=admin:admin
