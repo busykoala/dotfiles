@@ -37,3 +37,6 @@ export TERM=xterm-color
 
 # ftw.upgrade
 export UPGRADE_AUTHENTICATION=admin:admin
+
+# gpg key
+export GPG_TTY=$(tty)
