@@ -1,13 +1,21 @@
 #!/bin/bash
 
+# install command-line tools for Xcode
+xcode-select --install > /dev/null 2>&1
+
+# install homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# install from Brewfile
+brew bundle install
+
 VIM_REPO_FOLDER=~/vim_config
 VIM_REPO_URL=git@github.com:busykoala/vim_config.git
 if [ ! -d "$VIM_REPO_FOLDER" ] ; then
-	echo "The vim repo gets cloned"
-	git clone $VIM_REPO_URL $VIM_REPO_FOLDER
+    echo "The vim repo gets cloned"
+    git clone $VIM_REPO_URL $VIM_REPO_FOLDER
 else
-	echo "The vim repos exists, it is getting pulled"
-	git -C $VIM_REPO_FOLDER pull
+    echo "The vim repos exists, it is getting pulled"
+    git -C $VIM_REPO_FOLDER pull
 fi
 
 # Symlink .vimrc
