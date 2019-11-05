@@ -40,3 +40,7 @@ export UPGRADE_AUTHENTICATION=admin:admin
 
 # gpg key
 export GPG_TTY=$(tty)
+
+# openblas
+export LDFLAGS="-L/usr/local/opt/openblas/lib $LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/openblas/include $CPPFLAGS"
