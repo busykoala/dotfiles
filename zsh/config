@@ -74,3 +74,5 @@ rationalise-dot() {
 }
 zle -N rationalise-dot
 bindkey . rationalise-dot
+
+source $HOME/.cargo/env
