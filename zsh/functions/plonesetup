@@ -3,8 +3,11 @@ HIGHLIGHT="*************************"
 echo "${HIGHLIGHT}\nActivate venv\n${HIGHLIGHT}"
 workon plone_init
 
-echo "${HIGHLIGHT}\nSymlink development.cfg\n${HIGHLIGHT}"
-ln -fs development.cfg buildout.cfg
+echo "${HIGHLIGHT}\nCopy busykoala_buildout.cfg to project\n${HIGHLIGHT}"
+cp -f ~/dotfiles/examples/busykoala_buildout.cfg busykoala_buildout.cfg
+
+echo "${HIGHLIGHT}\nSymlink busykoala_buildout.cfg\n${HIGHLIGHT}"
+ln -fs busykoala_buildout.cfg buildout.cfg
 
 echo "${HIGHLIGHT}\nBootstrap app\n${HIGHLIGHT}"
 python bootstrap.py
