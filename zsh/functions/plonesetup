@@ -1,28 +1,33 @@
-HIGHLIGHT="*************************"
+echo "\n--> Get package name\n"
+PKG_NAME=$(cat setup.py | grep name= | cut -d\' -f2)
+echo "\n--> Found package name: ${PKG_NAME}\n"
 
-echo "${HIGHLIGHT}\nActivate venv\n${HIGHLIGHT}"
+echo "\n--> Activate venv\n"
 workon plone_init
 
-echo "${HIGHLIGHT}\nCopy busykoala_buildout.cfg to project\n${HIGHLIGHT}"
+echo "\n--> Copy busykoala_buildout.cfg to project\n"
 cp -f ~/dotfiles/examples/busykoala_buildout.cfg busykoala_buildout.cfg
 
-echo "${HIGHLIGHT}\nSymlink busykoala_buildout.cfg\n${HIGHLIGHT}"
+echo "\n--> Replacing PACKAGE_NAME with ${PKG_NAME}\n"
+sed -i '' "s/PACKAGE_NAME/$PKG_NAME/g" busykoala_buildout.cfg
+
+echo "\n--> Symlink busykoala_buildout.cfg\n"
 ln -fs busykoala_buildout.cfg buildout.cfg
 
-echo "${HIGHLIGHT}\nBootstrap app\n${HIGHLIGHT}"
+echo "\n--> Bootstrap app\n"
 python bootstrap.py
 
-echo "${HIGHLIGHT}\nDeactivate venv\n${HIGHLIGHT}"
+echo "\n--> Deactivate venv\n"
 deactivate
 
-echo "${HIGHLIGHT}\nRun buildout\n${HIGHLIGHT}"
+echo "\n--> Run buildout\n"
 bin/buildout
 
 if [ -d "./parts/real_omelette" ]; then
-  echo "${HIGHLIGHT}\nDelete old real_omelette\n${HIGHLIGHT}"
+  echo "\n--> Delete old real_omelette\n"
   rm -rf ./parts/real_omelette
 fi
 if [ -d "./parts/omelette" ]; then
-  echo "${HIGHLIGHT}\nAdd new real_omelette\n${HIGHLIGHT}"
+  echo "\n--> Add new real_omelette\n"
   cp -RL ./parts/omelette ./parts/real_omelette
 fi
