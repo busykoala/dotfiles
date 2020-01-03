@@ -31,3 +31,7 @@ if [ -d "./parts/omelette" ]; then
   echo "\n--> Add new real_omelette\n"
   cp -RL ./parts/omelette ./parts/real_omelette
 fi
+
+echo "\n--> Copy test-changed to bin/test-changed\n"
+cp -f ~/dotfiles/examples/test-changed bin/test-changed
+chmod +x bin/test-changed

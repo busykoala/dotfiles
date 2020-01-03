@@ -76,3 +76,5 @@ zle -N rationalise-dot
 bindkey . rationalise-dot
 
 source $HOME/.cargo/env
+
+source /usr/local/lib/bazel/bin/bazel-complete.bash

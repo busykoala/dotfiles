@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -euo pipefail
+
+dottednames=`(git diff --cached --name-only **/test_*.py ; git diff --name-only **/test_*.py) | sed -e 's:.py::' -e 's:/:.:g'`
+args=`echo $dottednames | sed -e 's: : -t :g' -e 's:^:-t :'`
+./bin/test $args $@

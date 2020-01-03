@@ -1,0 +1,7 @@
+# vim language server need nvm
+if ! command -v nvm; then
+    load-nvm
+fi
+
+# open vim now
+/usr/local/bin/vim $@
