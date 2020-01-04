@@ -15,3 +15,14 @@ These products have to be installed manually:
 ## Change Neo2
 
 https://github.com/jgosmann/neo2-layout-osx
+
+## Setup Git Mail
+
+- https://github.com/Homebrew/homebrew-core/issues/33524#issuecomment-434631088
+- https://git-send-email.io/#step-1
+
+## Documentation
+
+Node version manager: https://github.com/Schniz/fnm
+Ruby version manager: rbenv
+Python version manager: pyenv & pyenv-virtualenv

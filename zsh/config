@@ -42,24 +42,7 @@ hash pyenv 2>/dev/null && eval "$(pyenv init -)" && eval "$(pyenv virtualenv-ini
 workon(){source $(pyenv root)/versions/"$1"/bin/activate}
 compctl -/ -W $(pyenv root)/versions/ workon
 
-# lazy load nvm (on navigating into dir with .nvmrc)
-function load-nvm () {
-  if [[ $OSTYPE == "darwin"* ]]; then
-    export NVM_DIR=~/.nvm
-    [[ -s $(brew --prefix nvm)/nvm.sh ]] && source $(brew --prefix nvm)/nvm.sh
-  else
-    [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
-  fi
-}
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    if ! type nvm >/dev/null; then
-      load-nvm
-    fi
-    nvm use
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
+eval "`fnm env --multi`"
 
 # Add Ruby path
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -76,5 +59,3 @@ zle -N rationalise-dot
 bindkey . rationalise-dot
 
 source $HOME/.cargo/env
-
-source /usr/local/lib/bazel/bin/bazel-complete.bash
