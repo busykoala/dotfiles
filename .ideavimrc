@@ -5,3 +5,8 @@ inoremap <S-Tab> <C-D>
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
+" Remap h, j, k, l
+noremap s h
+noremap n j
+noremap r k
+noremap t l

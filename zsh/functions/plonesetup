@@ -1,37 +1,42 @@
-echo "\n--> Get package name\n"
+echo "\n\e[95m--> Get package name\e[39m\n"
 PKG_NAME=$(cat setup.py | grep name= | cut -d\' -f2)
-echo "\n--> Found package name: ${PKG_NAME}\n"
+echo "\n\e[95m--> Found package name: ${PKG_NAME}\e[39m\n"
 
-echo "\n--> Activate venv\n"
+echo "\n\e[95m--> Activate venv\e[39m\n"
 workon plone_init
 
-echo "\n--> Copy busykoala_buildout.cfg to project\n"
+echo "\n\e[95m--> Copy busykoala_buildout.cfg to project\e[39m\n"
 cp -f ~/dotfiles/examples/busykoala_buildout.cfg busykoala_buildout.cfg
 
-echo "\n--> Replacing PACKAGE_NAME with ${PKG_NAME}\n"
+echo "\n\e[95m--> Replacing PACKAGE_NAME with ${PKG_NAME}\e[39m\n"
 sed -i '' "s/PACKAGE_NAME/$PKG_NAME/g" busykoala_buildout.cfg
 
-echo "\n--> Symlink busykoala_buildout.cfg\n"
+echo "\n\e[95m--> Symlink busykoala_buildout.cfg\e[39m\n"
 ln -fs busykoala_buildout.cfg buildout.cfg
 
-echo "\n--> Bootstrap app\n"
+echo "\n\e[95m--> Bootstrap app\e[39m\n"
 python bootstrap.py
 
-echo "\n--> Deactivate venv\n"
+echo "\n\e[95m--> Deactivate venv\e[39m\n"
 deactivate
 
-echo "\n--> Run buildout\n"
+echo "\n\e[95m--> Start timer.\e[39m\n"
+SECONDS=0
+
+echo "\n\e[95m--> Run buildout\e[39m\n"
 bin/buildout
 
+echo "\n\e[95m--> Buildout took ${SECONDS} seconds.\e[39m\n"
+
 if [ -d "./parts/real_omelette" ]; then
-  echo "\n--> Delete old real_omelette\n"
+  echo "\n\e[95m--> Delete old real_omelette\e[39m\n"
   rm -rf ./parts/real_omelette
 fi
 if [ -d "./parts/omelette" ]; then
-  echo "\n--> Add new real_omelette\n"
+  echo "\n\e[95m--> Add new real_omelette\e[39m\n"
   cp -RL ./parts/omelette ./parts/real_omelette
 fi
 
-echo "\n--> Copy test-changed to bin/test-changed\n"
+echo "\e[95m\n--> Copy test-changed to bin/test-changed\e[39m\n"
 cp -f ~/dotfiles/examples/test-changed bin/test-changed
 chmod +x bin/test-changed

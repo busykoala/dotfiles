@@ -3,10 +3,10 @@
 .idea
 *.dok
 .vscode
-.ycm_extra_conf.py
 busykoala_buildout.cfg
 user_specific/*
 *.swp
 pyvenv.cfg
 **/4teamwork_ldap_plugin.xml
 pylama.ini
+filestorage.bak.fs

@@ -49,7 +49,7 @@ ln -sf ~/dotfiles/.isort.cfg ~/.isort.cfg
 ln -sf ~/dotfiles/python/.pdbrc ~/.pdbrc
 ln -sf ~/dotfiles/python/.pythonrc ~/.pythonrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/.buildout_default.cfg ~/.buildout/.default.cfg
+ln -sf ~/dotfiles/.buildout_default.cfg ~/.buildout/default.cfg
 
 echo "--> Update & upgrade brew now."
 brew update

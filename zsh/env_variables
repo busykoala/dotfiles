@@ -26,6 +26,7 @@ export CFLAGS="-I$(xcrun --show-sdk-path)/usr/include/sasl $CFLAGS"
 export JUNIT_HOME="$HOME/bin/java"
 export PATH="$PATH:$JUNIT_HOME"
 export CLASSPATH="$CLASSPATH:$JUNIT_HOME/junit-4.13-beta-2.jar:$JUNIT_HOME/hamcrest-core-2.1.jar"
+export JAVA_HOME="`/usr/libexec/java_home -v 13`"
 
 # python/pdb config
 export PYTHONSTARTUP=$HOME/.pythonrc
