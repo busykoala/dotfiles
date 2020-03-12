@@ -50,6 +50,7 @@ ln -sf ~/dotfiles/python/.pdbrc ~/.pdbrc
 ln -sf ~/dotfiles/python/.pythonrc ~/.pythonrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.buildout_default.cfg ~/.buildout/default.cfg
+ln -sf ~/dotfiles/ssh/config ~/.ssh/config
 
 echo "--> Update & upgrade brew now."
 brew update
