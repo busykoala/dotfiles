@@ -19,13 +19,23 @@ Host                    office
     Hostname            d9fw.4teamwork.ch
     User                mos
 
-# local virtual machine
+# 4teamwork Virtual Machine
 Host                    10.0.0.174
     User                zope
     ForwardAgent        yes
 Host                    10.0.0.174
     User                root
     ForwardAgent        yes
+
+# Jump Host Baselland (Maethu)
+Host                    *.bl.ch
+    ProxyJump           vpn
+    User                zope
+Host                    bl
+    Hostname            fziwebblbe01q.bl.ch
+    DynamicForward      5051
+    ProxyJump           vpn
+    User                zope
 
 # APPENZELL INNERRHODEN
 # web-redaktion, intranet
@@ -38,14 +48,3 @@ Host ai-ux-teamraum.ai.ch
     User                zope
     Hostname            194.147.134.49
     ProxyCommand        ssh -A zope@beta.4teamwork.ch nc %h %p 2> /dev/null
-
-# Jump Host Baselland (Maethu)
-Host                    *.bl.ch
-    ProxyJump           vpn
-    User                zope
-Host                    bl
-    Hostname            fziwebblbe01q.bl.ch
-    DynamicForward      5051
-    ProxyJump           vpn
-    User                zope
-    ForwardAgent        yes
