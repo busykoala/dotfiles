@@ -1,2 +1,3 @@
 !examples/busykoala_buildout.cfg
 .gtm
+Brewfile.lock.json
