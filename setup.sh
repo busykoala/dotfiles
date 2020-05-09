@@ -16,7 +16,7 @@ echo "--> Dependencies from Brewfile are getting installed."
 brew bundle install
 
 VIM_REPO_FOLDER=~/vim_config
-VIM_REPO_URL=git@github.com:busykoala/vim_config.git
+VIM_REPO_URL=git@git.sr.ht:~busykoala/vim_config
 if [ ! -d "$VIM_REPO_FOLDER" ] ; then
     echo "--> The vim repo gets cloned."
     git clone $VIM_REPO_URL $VIM_REPO_FOLDER
