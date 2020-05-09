@@ -6,6 +6,19 @@ Host                    *
   UseKeychain           yes
   AddKeysToAgent        yes
 
+Host                    homeServer
+    Hostname            188.68.33.226
+    ProxyJump           cockpitServer
+
+Host                    rootServer
+    Hostname            194.13.82.8
+    User                root
+    ProxyJump           cockpitServer
+
+Host                    cockpitServer
+    Hostname            194.13.80.17
+    User                root
+
 Host                    vpn
     Hostname            10.0.0.161
     User                vpn

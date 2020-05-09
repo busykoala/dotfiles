@@ -10,3 +10,4 @@ pyvenv.cfg
 **/4teamwork_ldap_plugin.xml
 pylama.ini
 filestorage.bak.fs
+.gtm
