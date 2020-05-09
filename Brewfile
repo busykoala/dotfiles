@@ -67,7 +67,6 @@ cask "java"
 cask "mactex"
 cask "microsoft-office"
 cask "slack"
-cask "snagit"
 cask "spectacle"
 cask "spotify"
 cask "thunderbird"
@@ -77,14 +76,16 @@ cask "vlc"
 cask "skim"
 
 brew "mas"
-mas "DaftCloud", id: 1320450034
-mas "GCal for Google Calendar", id: 1107163858
-mas "Harvest", id: 506189836
-mas "LastPass", id: 926036361
-mas "Microsoft Remote Desktop", id: 1295203466
-mas "MobilePASS", id: 972648459
-mas "Pages", id: 409201541
-mas "Slack", id: 803453959
-mas "Spark", id: 1176895641
-mas "Telephone", id: 406825478
+mas "Jira", id: 1475897096
 mas "Xcode", id: 497799835
+mas "Microsoft To Do", id: 1274495053
+mas "Microsoft Remote Desktop", id: 1295203466
+mas "DaftCloud", id: 1320450034
+mas "Telephone", id: 406825478
+mas "Slack", id: 803453959
+mas "Pages", id: 409201541
+mas "Spark", id: 1176895641
+mas "GCal for Google Calendar", id: 1107163858
+mas "LastPass", id: 926036361
+mas "MobilePASS", id: 972648459
+mas "Harvest", id: 506189836
