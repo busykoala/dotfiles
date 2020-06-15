@@ -2,6 +2,7 @@
     name = Matthias Osswald
     email = m@osswald.li
     username = busykoala
+    signingkey = 36B5F98B41732777
 [include]
     path = ~/dotfiles/user_specific/.gitconfig_expand
 [core]
