@@ -16,4 +16,5 @@
     pretty = %C(blue)%h%Creset %s %C(green)%d%Creset [%C(red)%an%Creset, %C(cyan)%cr%Creset] %C(bold reverse)%N%Creset
 [rerere]
     enabled = 0
-
+[commit]
+    gpgsign = true
